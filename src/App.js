@@ -42,21 +42,9 @@ function App() {
 
   return (
     <div className="App">
-      <CatContainer>
-        {cats.map((cat, index) => (
-          <div key={index}>
-            <h1>{cat.name + ", " + cat.price}</h1>
-            <img src={cat.image} alt="cat" />
-          </div>
-        ))}
-      </CatContainer>
-
-      {cats.map((cat, index) => (
-        <div key={index}>
-          <h1>{cat.name + ", " + cat.price}</h1>
-          <img src={cat.image} alt="cat" />
-        </div>
-      ))}
+      {cats.map((cat, index) => {
+        return <Card key={index} cat={cat}></Card>
+      })}
     </div>
   );
 }
