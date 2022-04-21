@@ -71,7 +71,7 @@ function App() {
         onRequestClose={popUpAction}
         overlayClassName='customOverlay'
         className='customClass'>
-        <BasketPopUp close={popUpAction} />
+        <BasketPopUp close={popUpAction} add={addToCheckout} remove={removeFromCheckout} basketItems={checkoutItems}/>
       </Modal>
       {/* For Modal */}
 
