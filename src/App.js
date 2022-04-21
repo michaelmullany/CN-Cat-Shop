@@ -1,10 +1,11 @@
 import './App.css';
 import { faker } from '@faker-js/faker';
 import { useState, useEffect } from 'react'
-import Card from "./Card";
+import Card from './Card';
 import { CatContainer } from './App.styled.js'
 import BasketPopUp from './BasketPopUp';
 import Modal from 'react-modal';
+import Header from './Header'
 
 /* PARAMETERS */
 const numCats = 6;
@@ -62,15 +63,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {/* For Modal */}
-      <button onClick={popUpAction}><h2>CART</h2></button>
-      <Modal 
-             isOpen={popUpIsOpen } 
-             onRequestClose={popUpAction} 
-             overlayClassName="customOverlay" 
-             className="customClass">
-                 <BasketPopUp close={popUpAction} add={addToCheckout} remove={removeFromCheckout} basketItems={checkoutItems}/>
+    <div className='App'>
+      <Header />
+      <button className='cart' onClick={popUpAction}>CART</button>
+      <Modal
+        isOpen={popUpIsOpen}
+        onRequestClose={popUpAction}
+        overlayClassName='customOverlay'
+        className='customClass'>
+        <BasketPopUp close={popUpAction} />
       </Modal>
       {/* For Modal */}
 

@@ -1,3 +1,5 @@
+import './Card.css';
+
 const Card = ({ cat, addToCheckout }) => {
     return (
         <div>

@@ -17,15 +17,3 @@ img {
   height: auto;
   border-radius: 1rem;
 }
-
-.card {
-  padding: 1rem;
-}
-
-.add-to-basket {
-  padding: 0.4 rem;
-  font-weight: 200;
-  border-radius: 0.4rem;
-  color: black;
-  background-color: whitesmoke;
-}
