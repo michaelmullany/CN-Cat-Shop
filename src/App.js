@@ -22,6 +22,20 @@ function App() {
   const popUpAction = () => setPopUpIsOpen(!popUpIsOpen);
   // For Modal //
 
+  // For checkout items //
+  const [checkoutItems, setCheckoutItems] = useState([])
+  const addToCheckout = (event) => {
+    let tempArray = [...checkoutItems];
+    tempArray.push(event)
+    setCheckoutItems(tempArray)
+  }
+  const removeFromCheckout = (event) => {
+    let tempArray = [...checkoutItems]
+    tempArray.push(event)
+    setCheckoutItems(tempArray)
+  }
+  // For checkout items //
+
   useEffect(() => {
     const fetchCats = async (numCats) => {
       try {
@@ -62,7 +76,7 @@ function App() {
       {/* For Modal */}
 
       {cats.map((cat, index) => {
-        return <Card key={index} cat={cat}></Card>
+        return <Card key={index} cat={cat} addToCheckout={addToCheckout}></Card>
       })}
     </div>
   );
