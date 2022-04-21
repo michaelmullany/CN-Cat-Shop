@@ -1,6 +1,7 @@
 import './App.css';
 import { faker } from '@faker-js/faker';
 import { useState, useEffect } from 'react'
+import Card from "./Card";
 import { CatContainer } from './App.styled.js'
 
 /* PARAMETERS */
@@ -25,12 +26,11 @@ function App() {
         const catImages = await response.json();
         console.log(catImages);
 
-        for (let i = 0; i < numCats; i++)
-        {
+        for (let i = 0; i < numCats; i++) {
           const catName = faker.name.firstName();
           const catPrice = faker.commerce.price(minPrice, maxPrice, 0, "£");
           const catImage = catImages[i].url;
-          const newCat = {name: catName, price: catPrice, image: catImage};
+          const newCat = { name: catName, price: catPrice, image: catImage };
           newCats.push(newCat);
         }
         setCats(newCats);
@@ -51,6 +51,12 @@ function App() {
         ))}
       </CatContainer>
 
+      {cats.map((cat, index) => (
+        <div key={index}>
+          <h1>{cat.name + ", " + cat.price}</h1>
+          <img src={cat.image} alt="cat" />
+        </div>
+      ))}
     </div>
   );
 }
