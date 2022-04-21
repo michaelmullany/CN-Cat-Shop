@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* For Modal */
+.modalPopUp{
+  padding: 25px;
+}
+#closeButton {
+  display:flex;
+  justify-content: flex-end;
+}
+#xBtn {
+  background-color: rgba(128, 128, 128, 0.05);
+  border: none;
+}
+#checkoutOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.customOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(254, 253, 255, 0.636);
+}
+.customClass {
+  position: absolute;
+  top: 20vh;
+  bottom:20vw;
+  left: 20vw;
+  right: 20vw;
+  height: 60vh;
+  width: 60vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  box-shadow: 0px 5px 50px hsla(220, 13%, 18%, 0.46);
+} 
+/* For Modal */

@@ -3,6 +3,8 @@ import { faker } from '@faker-js/faker';
 import { useState, useEffect } from 'react'
 import Card from "./Card";
 import { CatContainer } from './App.styled.js'
+import BasketPopUp from './BasketPopUp';
+import Modal from 'react-modal';
 
 /* PARAMETERS */
 const numCats = 6;
@@ -13,6 +15,11 @@ function App() {
 
   const [cats, setCats] = useState([]);
   const [error, setError] = useState(null);
+
+  // For Modal //
+  const [popUpIsOpen, setPopUpIsOpen] = useState(false);
+  const popUpAction = () => setPopUpIsOpen(!popUpIsOpen);
+  // For Modal //
 
   useEffect(() => {
     const fetchCats = async (numCats) => {
@@ -42,6 +49,18 @@ function App() {
 
   return (
     <div className="App">
+
+      {/* For Modal */}
+      <button onClick={popUpAction}><h2>CART</h2></button>
+      <Modal 
+             isOpen={popUpIsOpen } 
+             onRequestClose={popUpAction} 
+             overlayClassName="customOverlay" 
+             className="customClass">
+                 <BasketPopUp close={popUpAction} />
+      </Modal>
+      {/* For Modal */}
+
       <CatContainer>
         {cats.map((cat, index) => (
           <div key={index}>
