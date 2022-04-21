@@ -1,6 +1,7 @@
 import './App.css';
 import { faker } from '@faker-js/faker';
 import { useState, useEffect } from 'react'
+import { CatContainer } from './App.styled.js'
 
 /* PARAMETERS */
 const numCats = 6;
@@ -41,13 +42,14 @@ function App() {
 
   return (
     <div className="App">
-
-      {cats.map((cat, index) => (
-        <div key={index}>
-          <h1>{cat.name + ", " + cat.price}</h1>
-          <img src={cat.image} alt="cat" />
-        </div>
-      ))}
+      <CatContainer>
+        {cats.map((cat, index) => (
+          <div key={index}>
+            <h1>{cat.name + ", " + cat.price}</h1>
+            <img src={cat.image} alt="cat" />
+          </div>
+        ))}
+      </CatContainer>
 
     </div>
   );
