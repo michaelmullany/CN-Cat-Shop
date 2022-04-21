@@ -8,9 +8,18 @@ const BasketPopUp = (props) => {
             </div>
             <div id="basketContents">
             <h2>Basket</h2>
-            <p>Total:</p>
+            {props.basketItems.map(x => {
+                return (
+            <div>
+            <img src={x.image} />
+            <h2>Name: {x.name}</h2>
+            <p>Price: {x.price}</p>
+            <button>remove</button>
             </div>
-            <div classNames="checkoutOptions">
+            )             
+            })}
+            </div>
+            <div className="checkoutOptions">
                 <button>Checkout</button>
                 <button>Keep looking</button>
             </div>
