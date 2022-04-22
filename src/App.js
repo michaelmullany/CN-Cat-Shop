@@ -2,7 +2,6 @@ import './App.css';
 import { faker } from '@faker-js/faker';
 import { useState, useEffect } from 'react'
 import Card from './Card';
-import { CatContainer } from './App.styled.js'
 import BasketPopUp from './BasketPopUp';
 import Modal from 'react-modal';
 import Header from './Header'
@@ -31,21 +30,31 @@ function App() {
   
   const addToCheckout = (obj) => {
     let tempArray = [...checkoutItems];
-    tempArray.push(obj)
-    tempArray.map(x => {
-      setTotal(total + parseInt(x.price.slice(1)))
-      
-    }) 
-    setCheckoutItems(tempArray)
+    console.log(tempArray);
+    tempArray.push(obj);
+    setCheckoutItems(tempArray);
+
+    let newTotal = 0;
+    tempArray.forEach(cat => {
+      newTotal += (1 * cat.price.slice(1));
+    });
+
+    setTotal(newTotal);
     popUpAction();
     
   }
   const removeFromCheckout = (index) => {
     let tempArray = [...checkoutItems];
     tempArray.splice(index, 1);   
-    setCheckoutItems(tempArray)
+    setCheckoutItems(tempArray);
+
+    let newTotal = 0;
+    tempArray.forEach(cat => {
+      newTotal += (1 * cat.price.slice(1));
+    });
+
+    setTotal(newTotal);
   }
-  // For checkout items //
 
   useEffect(() => {
     const fetchCats = async (numCats) => {
