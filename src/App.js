@@ -29,6 +29,7 @@ function App() {
     let tempArray = [...checkoutItems];
     tempArray.push(obj)
     setCheckoutItems(tempArray)
+    popUpAction();
   }
   const removeFromCheckout = (index) => {
     console.log(index);
