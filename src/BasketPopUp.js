@@ -1,3 +1,5 @@
+import './BasketPopUp.css'
+
 const BasketPopUp = (props) => {
     return (
         <div className="modalPopUp">
@@ -7,16 +9,20 @@ const BasketPopUp = (props) => {
             <div id="basketContents">
               <h2>Basket</h2>
               <h3>Total: £{props.total}</h3>
+              <div id="modalBody">
               {props.basketItems.map((x, index) => {
                 return (
-                <div key={index}>
+                <div key={index} id="catContainerBasket">
+                    <div>
                     <img src={x.image} />
                     <h2>Name: {x.name}</h2>
                     <p>Price: {x.price}</p>
                     <button onClick={() => props.remove(index)}>Remove</button>
+                    </div>
                 </div>
                 )             
             })}
+            </div>
             </div>
             <div className="checkoutOptions">
                 <button>Checkout</button>
