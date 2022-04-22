@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+#basketContents, h2 p{
+  text-align: center;
+}
+.checkoutOptions  {
+    display:flex;
+    justify-content: center;
+}
+
+#catContainerBasket {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#catContainerBasket button {
+
+    border-radius: 10px;
+    background-color: white;
+}
+#catContainerBasket > div {
+  width: 60;
+  border: solid #ec9ded 2px;
+  border-radius: 20px;
+  margin: 20px;
+  color: #4a2040;
+  padding: 10px 10px 0 10px;
+}
+
+#catContainerBasket > div:hover {
+  background-color: #f5cce8;
+}
+
+#catContainerBasket h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 48px;
+  margin-bottom: 0;
+}
+
+#catContainerBasket h2 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-top: 0;
+}
+
+#catContainerBasket button {
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+
+.checkoutOptions button {
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.checkoutOptions button:hover {
+  color: #9f6ba0;
+}
