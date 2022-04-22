@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -84,4 +87,45 @@
   margin-top: 2vh;
   padding: 0.4rem;
   border-radius: 0.4rem;
+}
+
+#catContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#catContainer > div {
+  width: 24%;
+  border: solid #ec9ded 2px;
+  border-radius: 20px;
+  margin: 20px;
+  color: #4a2040;
+}
+
+#catContainer > div:hover {
+  background-color: #f5cce8;
+}
+
+#catContainer h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 48px;
+  margin-bottom: 0;
+}
+
+#catContainer h2 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-top: 0;
+}
+
+#catContainer button {
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+}
+
+#catContainer button:hover {
+  color: #9f6ba0;
 }
