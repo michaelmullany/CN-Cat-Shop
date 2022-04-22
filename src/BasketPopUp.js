@@ -6,6 +6,7 @@ const BasketPopUp = (props) => {
             </div>
             <div id="basketContents">
               <h2>Basket</h2>
+              <h3>Total: £{props.total}</h3>
               {props.basketItems.map((x, index) => {
                 return (
                 <div key={index}>

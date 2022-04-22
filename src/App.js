@@ -19,20 +19,28 @@ function App() {
 
   // For Modal //
   const [popUpIsOpen, setPopUpIsOpen] = useState(false);
-  const popUpAction = () => setPopUpIsOpen(!popUpIsOpen);
+  const popUpAction = () => {    
+    
+    setPopUpIsOpen(!popUpIsOpen)   
+  };
   // For Modal //
 
   // For checkout items //
   const [checkoutItems, setCheckoutItems] = useState([])
+  const [total, setTotal] = useState(0)
   
   const addToCheckout = (obj) => {
     let tempArray = [...checkoutItems];
     tempArray.push(obj)
+    tempArray.map(x => {
+      setTotal(total + parseInt(x.price.slice(1)))
+      
+    }) 
     setCheckoutItems(tempArray)
     popUpAction();
+    
   }
   const removeFromCheckout = (index) => {
-    console.log(index);
     let tempArray = [...checkoutItems];
     tempArray.splice(index, 1);   
     setCheckoutItems(tempArray)
@@ -49,7 +57,6 @@ function App() {
         }
 
         const catImages = await response.json();
-        console.log(catImages);
 
         for (let i = 0; i < numCats; i++) {
           const catName = faker.name.firstName();
@@ -73,8 +80,9 @@ function App() {
         isOpen={popUpIsOpen}
         onRequestClose={popUpAction}
         overlayClassName='customOverlay'
-        className='customClass'>
-        <BasketPopUp close={popUpAction} add={addToCheckout} remove={removeFromCheckout} basketItems={checkoutItems}/>
+        className='customClass'
+        >
+        <BasketPopUp close={popUpAction} add={addToCheckout} remove={removeFromCheckout} basketItems={checkoutItems} total={total}/>
       </Modal>
       {/* For Modal */}
 
