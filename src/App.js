@@ -8,7 +8,7 @@ import Modal from 'react-modal';
 import Header from './Header'
 
 /* PARAMETERS */
-const numCats = 6;
+const numCats = 12;
 const minPrice = 100;
 const maxPrice = 500;
 
@@ -86,9 +86,11 @@ function App() {
       </Modal>
       {/* For Modal */}
 
-      {cats.map((cat, index) => {
-        return <Card key={index} index={index} cat={cat} addToCheckout={addToCheckout} ></Card>
-      })}
+      <div id="catContainer">
+        {cats.map((cat, index) => {
+          return <Card key={index} index={index} cat={cat} addToCheckout={addToCheckout} ></Card>
+        })}
+      </div>
     </div>
   );
 }
