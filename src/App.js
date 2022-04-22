@@ -24,14 +24,16 @@ function App() {
 
   // For checkout items //
   const [checkoutItems, setCheckoutItems] = useState([])
-  const addToCheckout = (event) => {
+  
+  const addToCheckout = (obj) => {
     let tempArray = [...checkoutItems];
-    tempArray.push(event)
+    tempArray.push(obj)
     setCheckoutItems(tempArray)
   }
-  const removeFromCheckout = (event) => {
-    let tempArray = [...checkoutItems]
-    tempArray.push(event)
+  const removeFromCheckout = (index) => {
+    console.log(index);
+    let tempArray = [...checkoutItems];
+    tempArray.splice(index, 1);   
     setCheckoutItems(tempArray)
   }
   // For checkout items //
@@ -76,7 +78,7 @@ function App() {
       {/* For Modal */}
 
       {cats.map((cat, index) => {
-        return <Card key={index} cat={cat} addToCheckout={addToCheckout}></Card>
+        return <Card key={index} index={index} cat={cat} addToCheckout={addToCheckout} ></Card>
       })}
     </div>
   );

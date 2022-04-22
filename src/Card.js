@@ -1,6 +1,9 @@
 import './Card.css';
 
-const Card = ({ cat, addToCheckout }) => {
+const Card = ({ cat, addToCheckout, index }) => {
+    
+    
+    
     return (
         <div>
             <h1>{cat.name + " " + cat.price}</h1>
@@ -9,7 +12,9 @@ const Card = ({ cat, addToCheckout }) => {
                 {
                     name: cat.name,
                     price: cat.price,
-                    image: cat.image,                    
+                    image: cat.image,
+                    key: index
+
                 }
             )}>Add to Basket</button>
         </div>

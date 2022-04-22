@@ -6,20 +6,20 @@ const BasketPopUp = (props) => {
             </div>
             <div id="basketContents">
               <h2>Basket</h2>
-              {props.basketItems.map(x => {
-                  return (
-              <div>
-              <img src={x.image} />
-              <h2>Name: {x.name}</h2>
-              <p>Price: {x.price}</p>
-              <button>remove</button>
-            </div>
-            )             
+              {props.basketItems.map((x, index) => {
+                return (
+                <div key={index}>
+                    <img src={x.image} />
+                    <h2>Name: {x.name}</h2>
+                    <p>Price: {x.price}</p>
+                    <button onClick={() => props.remove(index)}>Remove</button>
+                </div>
+                )             
             })}
             </div>
             <div className="checkoutOptions">
                 <button>Checkout</button>
-                <button>Keep looking</button>
+                <button onClick={props.close}>Keep looking</button>
             </div>
         </div>
     )
